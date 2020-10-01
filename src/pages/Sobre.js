@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Menu from '../componentes/Menu';
-import '../css/sobre.css';
 
 export default class Sobre extends Component{
     render(){

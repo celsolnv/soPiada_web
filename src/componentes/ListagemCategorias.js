@@ -1,31 +1,13 @@
 import React,{Component} from 'react';
 import $ from 'jquery';
+import {NavLink} from 'react-router-dom';
 
-export default class ListagemPiadas extends Component{
+export default class ListagemCategorias extends Component{
     constructor(){
         super();
-        this.state = {categorias:[],piadas:[]}
-        this.abrirCategoria = this.abrirCategoria.bind(this);
-    }
-
-    componentWillMount(){
-        $.ajax({
-            url:"http://localhost/so_piadas_api/piadas.php",
-            dataType: 'json',
-            success: function(resposta) {
-                this.setState({piadas:resposta});
-            }.bind(this),
-            error: function (resposta) {
-                console.log(resposta);
-            }
-        });
+        this.state = {categorias:[]}
     }
     
-    // 
-    abrirCategoria(evento){
-        
-
-    }
     render(){
         return (
             <div>
@@ -35,15 +17,16 @@ export default class ListagemPiadas extends Component{
                         this.state.categorias.map(categoria =>{
                             
                             return(
-                                <li key={categoria.id} onClick={this.abrirCategoria}  className="list-group-item" >
-                                    {categoria.texto}
-                                </li>
+                                <NavLink key={categoria.id} to={"categorias/"+categoria.texto} >
+                                    <li className="list-group-item" >
+                                        {categoria.texto}
+                                    </li>
+                                </NavLink>
                             );
                         })
                     }
-                    {console.log('chamando')}
                 </ul>
-                {/* <ListagemPiadas piadas={this.state.piadas}></ListagemPiadas> */}
+                
             </div>
         );
     }

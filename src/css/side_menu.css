@@ -8,6 +8,7 @@
     height: 100%;
     transition: width 0.5s;
     z-index: 11;
+    top:0
 
 }
 .sideMenu a{
@@ -51,7 +52,7 @@
 .sideMenu .input-search{
     display: flex;
     align-items: center;
-    margin-left: 1rem ;
+    /* margin-left: 1rem ; */
     width: 90%; 
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -61,11 +62,12 @@
     position: fixed;
     width: 24px;
     height: 24px;
-    margin-left: 0.3rem;
+    /* margin-left: 0.3rem; */
 }
 .navbar{
     background-color: #2E598F;
-    position: sticky;
+    /* position: sticky; */
+    position: fixed;
     top:0;
     z-index: 10;
 }

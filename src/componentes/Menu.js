@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 import '../css/side_menu.css';
 
 import logo from '../static/logo.svg';
 import close from '../static/close.svg';
 import logoSideMenu from '../static/logo_side_menu.svg';
 import menuSanduiche from '../static/menu_sanduiche.svg';
+
 export default class Menu extends Component {
     constructor() {
         super();
@@ -37,27 +39,29 @@ export default class Menu extends Component {
                     <hr style={{ backgroundColor: 'white' }} />
                     <div className="sideMenu-options">
                         
-                        <a href="/">
+                        <NavLink to="/">
                             <div>
                                 <span>Home</span>
                             </div>
-                        </a>
-                        <a href="categorias">
+                        
+                        </NavLink>
+                        
+                        <NavLink to="/categorias">
                             <div>
                                 <span>Categorias</span>
                             </div>
-                        </a>
+                        </NavLink>
 
                         {/* <a href="favoritos">
                             <div>
                                 <span>Favoritas</span>
                             </div>
                         </a> */}
-                        <a href="sobre">
+                        <NavLink to="/sobre">
                             <div>
                                 <span>Sobre</span>
                             </div>
-                        </a>
+                        </NavLink>
 
                     </div>
                 </div>
